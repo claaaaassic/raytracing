@@ -20,6 +20,12 @@ CFLAGS += $(PROF_FLAGS)
 LDFLAGS += $(PROF_FLAGS) 
 endif
 
+ifeq ($(strip $(OPENMP)),1)
+PROF_FLAGS = -fopenmp
+CFLAGS += $(PROF_FLAGS)
+LDFLAGS += $(PROF_FLAGS)
+endif
+
 OBJS := \
 	objects.o \
 	raytracing.o \
